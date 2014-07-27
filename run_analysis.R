@@ -73,6 +73,8 @@ temp.labels$activity <- activity.labels[temp.labels$activity,]$activity
 # Merge temp sets and temp labels
 tidy.data.set <- cbind(subjects, temp.labels, temp.set)
 
+## Dump tidy data sets
+
 # Dump data set containing merged training and test data
 print(paste("Dumping ", tidy.data.file, "...", sep = ""))
 write.table(tidy.data.set, tidy.data.file, sep = ",", row.names = FALSE)
@@ -88,5 +90,6 @@ names(tidy.avgs.data.set)[1:2] <- c('subject', 'activity')
 print(paste("Dumping ", tidy.avgs.data.file, "...", sep = ""))
 write.table(tidy.avgs.data.set, tidy.avgs.data.file, sep = ",", row.names = FALSE)
 
-# End
+## End
+
 print("Done.")
